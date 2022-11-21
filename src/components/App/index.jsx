@@ -15,7 +15,6 @@ function App() {
 
   getCategories();
 
-
   return (
     <div>
       <Navbar />
