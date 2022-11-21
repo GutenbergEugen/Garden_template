@@ -1,13 +1,13 @@
-import Contacts from "../Contacts";
-import Navbar from "../Navbar";
-import '../../style.css'
-import SeasonSale from "../SeasonSale";
-import Discount from "../Discount";
 import { Routes, Route } from 'react-router-dom';
+
+import Navbar from "../Navbar";
+import HomePage from "../../pages/HomePage";
 import CategoriesPage from "../../pages/CategoriesPage";
-import CategorieCard from "../CategorieCard";
-import CategoriesMain from "../CategoriesMain";
+import BasketPage from "../../pages/BasketPage";
+import Contacts from "../Contacts";
+
 import { getCategories } from '../../requests/request'
+import '../../style.css'
 
 
 
@@ -19,13 +19,11 @@ function App() {
   return (
     <div>
       <Navbar />
-      <SeasonSale />
-      <CategoriesMain />
       <Routes>
+        <Route path="/home/*" element={<HomePage />}/>
         <Route path="/categories" element={<CategoriesPage />}/>
+        <Route path="/basket" element={<BasketPage />}/>
       </Routes>
-      
-      <Discount />
       <Contacts />
     </div>
   );

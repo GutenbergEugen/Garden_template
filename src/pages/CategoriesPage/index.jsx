@@ -6,7 +6,7 @@ import s from './style.module.sass'
 
 export default function CategoriesPage() {
   return (
-    <div className={s.categorie_conteiner}>
+    <div className={['wrapper', s.categorie_conteiner].join(' ')}>
         {
         categories.map(el => <CategorieCard {...el} key={el.id} />)
         }
