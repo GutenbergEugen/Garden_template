@@ -1,5 +1,5 @@
-export const getCategories = () => {
-    fetch('https://dummyjson.com/products')
+export const getCategories = (callbackFunc) => {
+    fetch('http://localhost:3333/categories/all')
         .then(res => res.json())
-        .then(json => console.log(json.products))           
+        .then(json => callbackFunc(json))           
 }

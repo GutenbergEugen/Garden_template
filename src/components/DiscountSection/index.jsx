@@ -2,7 +2,7 @@ import React from 'react';
 import s from './style.module.sass';
 import dwarf from './media/dwarf.png'
 
-export default function Discount() {
+export default function DiscountSection() {
   return (
     <div className={s.discount}>
         <img src={dwarf} alt="dwarf_img" />
