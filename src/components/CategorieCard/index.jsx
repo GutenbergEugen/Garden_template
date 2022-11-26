@@ -1,13 +1,14 @@
 import React from 'react';
 import s from './style.module.sass'
 
-export default function CategorieCard({title, categorie_img }) {
-
+export default function CategorieCard({id, title, categorie_img }) {
+ 
    
   return (
     <div className={s.categorie_card}>
-        <img src={categorie_img} alt="" />
-        {title}
+        <img src={categorie_img} alt="categorie_img" />
+        <p className={s.title}>{title}</p>
     </div>
   )
 }
+

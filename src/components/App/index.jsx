@@ -1,19 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import Navbar from "../Navbar";
 import HomePage from "../../pages/HomePage";
 import CategoriesPage from "../../pages/CategoriesPage";
 import BasketPage from "../../pages/BasketPage";
 import Contacts from "../Contacts";
-
-import { getCategories } from '../../requests/request'
 import '../../style.css'
 
 
 
 function App() {
 
-  getCategories();
+ 
 
   return (
     <div>

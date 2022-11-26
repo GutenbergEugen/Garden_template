@@ -14,12 +14,12 @@ export default function Navbar() {
                 
                 <div className={s.menu_basket}>
                     <ul className={s.menu}>
-                        <Link to='/categories'>Categories</Link>
+                        <Link to='/categories' className={s.categories} >Categories</Link>
                         <li>Coupon</li>
                         <li>Stock</li>
                         <li>Contacts</li>   
                     </ul>
-                    <ShoppingOutlined className={s.icon}/>
+                    <Link to='/basket' className={s.icon}><ShoppingOutlined/></Link>  
                 </div>
                 
             </div>
