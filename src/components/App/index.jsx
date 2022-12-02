@@ -3,8 +3,8 @@ import Navbar from "../Navbar";
 import HomePage from "../../pages/HomePage";
 import CategoriesPage from "../../pages/CategoriesPage";
 import BasketPage from "../../pages/BasketPage";
-import Contacts from "../Contacts";
 import '../../style.css'
+import Footer from '../Footer';
 
 
 
@@ -16,11 +16,11 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/home/*" element={<HomePage />}/>
+        <Route path="/" element={<HomePage />}/>
         <Route path="/categories" element={<CategoriesPage />}/>
         <Route path="/basket" element={<BasketPage />}/>
       </Routes>
-      <Contacts />
+      <Footer />
     </div>
   );
 }

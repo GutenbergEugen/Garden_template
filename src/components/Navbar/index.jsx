@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav>
         <div className={['wrapper', s.wrapper].join(' ')}>
-            <a href='/home'><img src={logo} alt="logo" /></a>
+            <a href='/'><img src={logo} alt="logo" /></a>
             <div className={s.menu_catalog}>
                 <Link to='/categories' className={s.catalog}>Catalog</Link>
                 
