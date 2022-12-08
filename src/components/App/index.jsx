@@ -5,6 +5,8 @@ import CategoriesPage from "../../pages/CategoriesPage";
 import BasketPage from "../../pages/BasketPage";
 import '../../style.css'
 import Footer from '../Footer';
+import ProductsPage from '../../pages/ProductsPage';
+import NotFound from '../../pages/NotFound';
 
 
 
@@ -18,7 +20,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/categories" element={<CategoriesPage />}/>
+        <Route path="/categories/:id" element={<ProductsPage />}/>
         <Route path="/basket" element={<BasketPage />}/>
+        {/* <Route path='*' element={<NotFound/>}/> */}
       </Routes>
       <Footer />
     </div>
