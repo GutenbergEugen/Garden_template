@@ -1,29 +1,30 @@
 import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import Navbar from "../Navbar";
 import HomePage from "../../pages/HomePage";
 import CategoriesPage from "../../pages/CategoriesPage";
 import BasketPage from "../../pages/BasketPage";
-import Contacts from "../Contacts";
-
-import { getCategories } from '../../requests/request'
 import '../../style.css'
+import Footer from '../Footer';
+import ProductsPage from '../../pages/ProductsPage';
+import NotFound from '../../pages/NotFound';
 
 
 
 function App() {
 
-  getCategories();
+ 
 
   return (
     <div>
       <Navbar />
       <Routes>
-        <Route path="/home/*" element={<HomePage />}/>
+        <Route path="/" element={<HomePage />}/>
         <Route path="/categories" element={<CategoriesPage />}/>
+        <Route path="/categories/:id" element={<ProductsPage />}/>
         <Route path="/basket" element={<BasketPage />}/>
+        {/* <Route path='*' element={<NotFound/>}/> */}
       </Routes>
-      <Contacts />
+      <Footer />
     </div>
   );
 }

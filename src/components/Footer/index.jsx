@@ -2,22 +2,24 @@ import React from 'react';
 import s from './style.module.sass';
 import { InstagramOutlined, WhatsAppOutlined } from '@ant-design/icons'; 
 
-export default function Contacts() {
+export default function Footer() {
   return (
    
     <div className={['wrapper', s.contacts].join(' ')}>
         <div className={s.contacts_phone}>
             <p>Contacts</p>
             <p>+7 999 999 99 99</p>
-            <div>
-                <a href='instargam' >
-                    <InstagramOutlined />
-                </a>
-                <a href='whatsApp'>
-                    <WhatsAppOutlined />
-                </a>  
-            </div>
-             
+            
+            <div className={s.social}>
+                <div className={s.insta}>
+                    <a href='instargam'><InstagramOutlined /></a>
+                    <p>Instagram</p>
+                </div>
+                <div className={s.whatsApp}>
+                    <a href='whatsApp'><WhatsAppOutlined /></a> 
+                    <p>WhatsApp</p>
+                </div>
+            </div>     
         </div>
 
         <div className={s.contacts_address}>

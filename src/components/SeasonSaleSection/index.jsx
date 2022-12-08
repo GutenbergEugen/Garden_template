@@ -2,7 +2,7 @@ import React from 'react';
 import img_sale from './media/SeasonSale.png';
 import s from './style.module.sass';
 
-export default function SeasonSale() {
+export default function SeasonSaleSection() {
   return (
     <div className={s.sale}>
         <div className={s.sale_text}>
