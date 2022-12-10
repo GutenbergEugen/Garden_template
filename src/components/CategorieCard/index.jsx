@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function CategorieCard({id, title, categorie_img }) {
  
-const link = `/category/${id}`;
+const link = `/categories/${id}`;
    
   return (
     <Link className={s.categorie_card} to={link}>
