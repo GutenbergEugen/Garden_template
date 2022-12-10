@@ -10,7 +10,7 @@ export default function ProductsPage() {
 
 const products = useSelector(state => state.products);
 const dispatch = useDispatch();
-console.log(products)
+// console.log(products)
 
 useEffect(() => {
     dispatch(loadProducts);

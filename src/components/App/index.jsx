@@ -13,8 +13,6 @@ import ProductDescription from '../../pages/ProductDescription';
 
 function App() {
 
- 
-
   return (
     <div>
       <Navbar />
@@ -22,7 +20,7 @@ function App() {
         <Route path="/" element={<HomePage />}/>
         <Route path="/categories" element={<CategoriesPage />}/>
         <Route path="/categories/:id" element={<ProductsPage />}/>
-        <Route path="/product/:id" element={<ProductDescription />}/>
+        <Route path="/product/:product_id" element={<ProductDescription />}/>
         <Route path="/basket" element={<BasketPage />}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
