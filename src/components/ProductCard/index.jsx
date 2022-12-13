@@ -6,12 +6,13 @@ import  product_image from './media/product_image.png';
 
 export default function ProductCard({id, title, price, discont_price, description, categoryId }) {
 
-    const link = `/product/${id}`
-    const discount =  (1- +discont_price / +price) * 100
+    const link = `/products/${id}`
+    const discount =  (1 - +discont_price / +price) * 100
 
   return (
     <Link to={link} className={s.card}>
         <img src={product_image} alt="image_product" />
+        <button className={s.btn_basket} >Add to Basket</button>
         <div className={s.price_container}>
           {
             discont_price === ''
