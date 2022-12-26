@@ -6,6 +6,7 @@ import s from './style.module.sass';
 export default function Basket() {
 
 const basket = useSelector(state => state.basket)
+console.log('basket:', basket)
 const dispatch = useDispatch();
 
   return (
