@@ -10,10 +10,9 @@ import  product_image from './media/product_image.png';
 export default function ProductDescription() {
 
     const {product_id} = useParams();
-    console.log('product_id:', product_id)
     const dispatch = useDispatch();
     const product = useSelector(state => state.singleProduct);
-    console.log('ProductDesc:', product)
+    console.log('ProductDesc:', product);
 
     useEffect(() => {
         dispatch(reset_product_action());

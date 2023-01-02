@@ -9,7 +9,7 @@ export const loadCategories = () => {
             id, title,
             categorie_img: "./media/fertilizer.png" 
         }));
-        console.log(payload)
+        console.log(data)
         dispatch(load_categories_action(payload))
     }
 };

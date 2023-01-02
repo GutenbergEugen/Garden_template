@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />}/>
         <Route path="/categories" element={<CategoriesPage />}/>
-        <Route path="/categories/:id" element={<ProductsPage />}/>
+        <Route path="/categories/:categorie_id" element={<ProductsPage />}/>
         <Route path="/products/:product_id" element={<ProductDescription />}/>
         <Route path="/basket" element={<BasketPage />}/>
         <Route path='*' element={<NotFound/>}/>
