@@ -8,10 +8,17 @@ export const INCR_COUNT = 'INCR_COUNT';
 export const DECR_COUNT = 'DECR_COUNT';
 export const CLEAR_BASKET = 'CLEAR_BASKET';
 
-export const add_to_basket_action = ( id, title, price, discont_price ) => {
+// export const add_to_basket_action = ( id, title, price, discont_price ) => {
+//     return{
+//         type: ADD_TO_BASKET,
+//         payload: {id, title, price, discont_price}
+//     }
+// }
+
+export const add_to_basket_action = ( payload ) => {
     return{
         type: ADD_TO_BASKET,
-        payload: {id, title, price, discont_price}
+        payload
     }
 }
 

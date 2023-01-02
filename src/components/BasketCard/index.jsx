@@ -4,7 +4,7 @@ import { decrement_count_action, increment_count_action } from '../../store/redu
 import s from './style.module.sass';
 
 export default function BasketCard({ id, images, title, price, discont_price, count}) {
-
+console.log('BasketCard', title)
 const dispatch = useDispatch();
 
   return (
@@ -15,6 +15,7 @@ const dispatch = useDispatch();
         {/* <p>{count}</p> */}
         <div className={s.button_container}>
           <button onClick={() => dispatch(increment_count_action(id))}>+</button>
+          <p>{count}</p>
           <button onClick={() => dispatch(decrement_count_action(id))}>-</button>
         </div>
         

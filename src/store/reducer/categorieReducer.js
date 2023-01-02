@@ -7,7 +7,7 @@ export const load_categories_action = (payload) => ({type: LOAD_CATEGORIES, payl
 
 export const categorieReducer = (state = default_state, action ) => {
     if (action.type === LOAD_CATEGORIES){
-        return [...action.payload]
+        return action.payload
     }else {
         return state
     }

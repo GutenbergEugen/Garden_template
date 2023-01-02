@@ -36,7 +36,7 @@ const render = () => {
                 <div className={s.info_product}>
                     <img src={product_image} alt='image_product' />
                 
-                    <container className={s.container}>
+                    <div className={s.container}>
                         <div className={s.price_container}>
                             {
                                 discont_price === ''
@@ -52,7 +52,7 @@ const render = () => {
                         <button className={s.button}>Add to Shopping Cart</button>
                         <p>Description</p> 
                         <p>{description}</p>
-                    </container>
+                    </div>
                 </div>
             </div>
         )
