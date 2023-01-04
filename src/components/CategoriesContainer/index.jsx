@@ -7,17 +7,18 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function CategoriesContainer() {
+
   const categories = useSelector(state => state.categorie);
-  // console.log(categories);
+  console.log('CONTAINER:', categories);
   const dispatch = useDispatch();
 
 useEffect(() => {
-  dispatch(loadCategories);
+  dispatch(loadCategories());
 }, []);
 
 
   return (
-    categories.length === 0 ? <p>LOADING</p> :
+    categories.length === 0 ? <p>LOADING...</p> :
     <div className={s.categorie_container}>
         {
         categories.map(el => <CategorieCard key={el.id} {...el} />)
