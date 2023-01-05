@@ -6,11 +6,13 @@ import { loadSingleProduct } from '../../store/asyncActions/product';
 import { reset_product_action } from '../../store/reducer/singleProductReducer';
 import s from './style.module.sass';
 import  product_image from './media/product_image.png';
+import { add_to_basket_action } from '../../store/reducer/basketReducer';
 
 export default function ProductDescription() {
 
     const {product_id} = useParams();
     const dispatch = useDispatch();
+    
     const product = useSelector(state => state.singleProduct);
     console.log('ProductDesc:', product);
 
@@ -48,7 +50,7 @@ const render = () => {
                                 </>
                             }
                         </div>
-                        <button className={s.button}>Add to Shopping Cart</button>
+                        <button className={s.button} onClick={() => {dispatch(add_to_basket_action({id, title, price, discont_price }))}}>Add to Basket</button>
                         <p>Description</p> 
                         <p>{description}</p>
                     </div>

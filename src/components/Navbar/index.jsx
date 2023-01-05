@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './media/logo.png';
 import s from './style.module.sass';
 import { ShoppingOutlined } from '@ant-design/icons'; 
-import { Link, NavLink } from 'react-router-dom'; 
+import { NavLink } from 'react-router-dom'; 
 
 export default function Navbar() {
   return (
