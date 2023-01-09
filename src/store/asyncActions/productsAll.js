@@ -1,4 +1,4 @@
-import { load_products_action } from "../reducer/productReducer";
+import { load_products_all_action } from "../reducer/productReducerAll";
 
 
 
@@ -15,11 +15,10 @@ import { load_products_action } from "../reducer/productReducer";
 //     dispatch(load_products_action(payload))
 // }
 
-export const loadProducts = (id) => {
+export const loadProductsAll = () => {
     return async dispatch => {
-        const response = await fetch(`http://localhost:3333/categories/${id}`);
+        const response = await fetch(`http://localhost:3333/products/all`);
         const data = await response.json()
-        console.log('asyncAction:', data);
         const payload = data.map(({id, title, price, discont_price, description, categoryId })=>({
             id, 
             title, 
@@ -27,11 +26,10 @@ export const loadProducts = (id) => {
             discont_price: +discont_price, 
             description,
             categoryId
+            
         }));
 
-        console.log('productAction:', payload)
-
-        dispatch(load_products_action(payload));
+        dispatch(load_products_all_action(payload));
     }
 }
 
