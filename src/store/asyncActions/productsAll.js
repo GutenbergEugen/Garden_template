@@ -19,13 +19,14 @@ export const loadProductsAll = () => {
     return async dispatch => {
         const response = await fetch(`http://localhost:3333/products/all`);
         const data = await response.json()
-        const payload = data.map(({id, title, price, discont_price, description, categoryId })=>({
+        const payload = data.map(({id, title, price, discont_price, description, categoryId, image })=>({
             id, 
             title, 
             price: +price, 
             discont_price: +discont_price, 
             description,
-            categoryId
+            categoryId,
+            image
             
         }));
 

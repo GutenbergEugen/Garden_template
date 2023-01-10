@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './style.module.sass';
 
-export default function Search() {
+export default function Search({filtered_products, setFiltered_products}) {
 
     // const search = (search_value) => {
     //     setProducts(prev => {
@@ -17,6 +17,7 @@ export default function Search() {
 
 const searchOnChange = event => {
     const value = event.target.value;
+    console.log(event.target.value)
     // search(value);
 }
 
