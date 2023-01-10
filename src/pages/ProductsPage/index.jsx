@@ -22,7 +22,7 @@ useEffect(() => {
     dispatch(loadProducts(categorie_id));
 }, [])
 
-useEffect(()=>{
+useEffect(()=> {
   setFiltered_products(products)
 }, [products])
 
@@ -35,7 +35,7 @@ useEffect(()=>{
       <Search filtered_products={filtered_products} setFiltered_products={setFiltered_products}/>
       {/* <Sort /> */}
 
-      <div className={s.card_container}>
+      <div className={['wrapper', s.card_container].join(' ')}>
           {
               filtered_products.map(product => <ProductCard key={product.id} {...product}/>)
           }
