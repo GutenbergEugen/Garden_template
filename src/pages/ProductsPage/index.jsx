@@ -26,18 +26,43 @@ useEffect(()=> {
   setFiltered_products(products)
 }, [products])
 
+const searchFROM = (search_value) => {
+  setFiltered_products(prev => {
+    return [...prev].map((product) => {
+      return {
+        ...product,
+        del_flg: product.price <= (search_value)
+      }
+    })
+  })
+}
 
+const searchUP = (search_value) => {
+  setFiltered_products(prev => {
+    return [...prev].map((product) => {
+      return {
+        ...product,
+        del_flg: product.price >= (search_value)
+      }
+    })
+  })
+}
+
+
+// console.log('Search', product_FILTER) 
 
 
   return (
     <section>
       {/* <p>{title}</p> */}
-      <Search filtered_products={filtered_products} setFiltered_products={setFiltered_products}/>
-      {/* <Sort /> */}
+      <Search searchFROM={searchFROM} searchUP={searchUP} />
+      
 
       <div className={['wrapper', s.card_container].join(' ')}>
           {
-              filtered_products.map(product => <ProductCard key={product.id} {...product}/>)
+              filtered_products
+                .filter(({del_flg}) => !del_flg)
+                .map(product => <ProductCard key={product.id} {...product}/>)
           }
       </div>
     </section>

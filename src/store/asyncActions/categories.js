@@ -8,7 +8,7 @@ export const loadCategories = () => {
         const payload = data.map(({id, title, image})=>({
             id, title, 
             image
-            // categorie_img: "./media/fertilizer.png" 
+            
         }));
         console.log('AsyncAction:', data)
         dispatch(load_categories_action(payload))

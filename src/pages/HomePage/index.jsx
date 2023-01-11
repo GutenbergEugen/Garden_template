@@ -23,7 +23,6 @@ const new_arr = categories.filter(function(el, index) {
   }
 }) 
 
-console.log('HomePage', new_arr)
 
   return (
     <>
