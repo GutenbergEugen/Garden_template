@@ -3,8 +3,15 @@ import logo from './media/logo.png';
 import s from './style.module.sass';
 import { ShoppingOutlined } from '@ant-design/icons'; 
 import { NavLink } from 'react-router-dom'; 
+import { useSelector } from 'react-redux';
 
 export default function Navbar() {
+
+    const basket = useSelector(state => state.basket)  
+    const count = basket.reduce((pre, {count}) => pre + count, 0)
+    console.log(count)
+
+
   return (
     <nav>
         <div className={['wrapper', s.wrapper].join(' ')}>
@@ -19,9 +26,11 @@ export default function Navbar() {
                         <li>Stock</li>
                         <li>Contacts</li>   
                     </ul>
-                    <NavLink to='/basket' className={s.icon}><ShoppingOutlined/></NavLink>  
-                </div>
-                
+                    <div className={s.counter}>
+                        <NavLink to='/basket' className={s.icon}><ShoppingOutlined/></NavLink>  
+                        {!!count && <span className={s.count}>{count}</span>}
+                    </div>
+                </div>   
             </div>
         </div>
     </nav>
