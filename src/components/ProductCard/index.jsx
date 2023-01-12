@@ -25,7 +25,7 @@ export default function ProductCard({id, title, price, discont_price, descriptio
             ? <p>{price.toFixed(2)}</p>
             : <>
               <p className={s.discont_price}>{discont_price.toFixed(2)}</p>
-              <p style={{color: 'gray', textDecoration: 'line-through'}} className={s.price}>{price}</p>
+              <p style={{color: 'gray', textDecoration: 'line-through'}} className={s.price}>{price.toFixed(2)}</p>
               <p className={s.discount}>{discount.toFixed(1)}%</p> 
             </>
           }

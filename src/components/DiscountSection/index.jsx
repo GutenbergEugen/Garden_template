@@ -10,7 +10,7 @@ export default function DiscountSection() {
             <p className={s.discount_sum}>5% discount</p>
             <p className={s.discount_orders}>on first order</p>
             <div className={s.inputs}>
-              <input className={s.phone} type="text" name='phone' placeholder='+7 '/>
+              <input className={s.phone} type="text" name='phone' placeholder='+49 '/>
               <button>Get a discount</button>
             </div>
         </form>

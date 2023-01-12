@@ -26,7 +26,7 @@ const dispatch = useDispatch();
           ? <p>{price}</p>
           : <>
             <p className={s.discont_price}>{discont_price.toFixed(2)}</p>
-            <p style={{color: 'gray', textDecoration: 'line-through'}} className={s.price}>{price}</p>
+            <p style={{color: 'gray', textDecoration: 'line-through'}} className={s.price}>{price.toFixed(2)}</p>
           </>
         }
       </div>  
