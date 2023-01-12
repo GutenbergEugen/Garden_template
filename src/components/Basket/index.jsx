@@ -26,7 +26,7 @@ console.log('basket:', basket)
         
         {
             basket.length === 0
-            ? <p className={'wrapper'}>Basket is empty</p>
+            ? <p className={['wrapper',s.basket_empty].join(' ')}>Basket is empty</p>
             : <div className={['wrapper',s.basket_container].join(' ')}>
                 <div className={s.products_container}>
                     {

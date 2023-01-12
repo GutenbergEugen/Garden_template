@@ -13,7 +13,7 @@ export default function ProductDescription() {
     const dispatch = useDispatch();
     
     const product = useSelector(state => state.singleProduct);
-    console.log('ProductDesc:', product);
+    
 
     useEffect(() => {
         dispatch(reset_product_action());

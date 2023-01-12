@@ -23,10 +23,10 @@ const dispatch = useDispatch();
       <div className={s.block_price}>
         {
           discont_price === ''
-          ? <p>{price}</p>
+          ? <p>{(price*count).toFixed(2)}</p>
           : <>
-            <p className={s.discont_price}>{discont_price.toFixed(2)}</p>
-            <p style={{color: 'gray', textDecoration: 'line-through'}} className={s.price}>{price.toFixed(2)}</p>
+            <p className={s.discont_price}>{(discont_price*count).toFixed(2)}</p>
+            <p style={{color: 'gray', textDecoration: 'line-through'}} className={s.price}>{(price*count).toFixed(2)}</p>
           </>
         }
       </div>  
