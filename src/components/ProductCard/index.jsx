@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { add_to_basket_action } from '../../store/reducer/basketReducer';
 
 
-export default function ProductCard({id, title, price, discont_price, description, categoryId, image }) {
+export default function ProductCard({id, title, price, discont_price, image }) {
 
     const link = `/products/${id}`
     const discount =  (1 - +discont_price / +price) * 100

@@ -16,7 +16,7 @@ export const loadProductsAll = () => {
             image
             
         }));
-
+        console.log('productAction:', data)
         dispatch(load_products_all_action(payload));
     }
 }

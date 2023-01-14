@@ -5,8 +5,7 @@ import { useEffect } from 'react';
 import { loadProducts } from '../../store/asyncActions/products';
 import ProductCard from '../../components/ProductCard';
 import s from './style.module.sass'
-// import Search from '../../components/Search';
-// import Sort from '../../components/Sort';
+
 
 export default function ProductsContainer() {
 
@@ -17,7 +16,7 @@ const [filtered_products, setFiltered_products] = useState(products);
 const dispatch = useDispatch();
 
 const {categorie_id} = useParams();
-console.log('ProductsPage:', categorie_id);
+// console.log('ProductsPage:', categorie_id);
 
 useEffect(() => {
     dispatch(loadProducts(categorie_id));
@@ -70,8 +69,8 @@ const sortOnChange = event => {
 }
 
   return (
-    <section>
-      <form className={['wrapper', s.search_form].join(' ')}>
+    <section className={['wrapper_main', s.products_block].join(' ')}>
+      <form className={ s.search_form}>
         <div className={s.search_price}>
           <p>Price</p>
           <input type="number" placeholder='From' onInput={minInput} value={priceParams.min}/>
@@ -92,7 +91,7 @@ const sortOnChange = event => {
         </div>
       </form>
 
-      <div className={['wrapper', s.card_container].join(' ')}>
+      <div className={s.card_container}>
           {
             filtered_products
               .filter(({show_flg}) => show_flg)

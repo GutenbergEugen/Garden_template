@@ -31,7 +31,7 @@ const render = () => {
         console.log('ProductDescrTITLE:', title)
         return (
             
-            <div className={s.card_product}>
+            <div className={['wrapper_main', s.card_product].join(' ')}>
                 <h3>{title}</h3>
                 <div className={s.info_product}>
                     <img src={image} alt='image_product' />

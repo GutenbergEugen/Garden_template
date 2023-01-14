@@ -4,14 +4,13 @@ import s from './style.module.sass';
 
 export default function SeasonSaleSection() {
   return (
-    <div className={s.sale}>
+    <div className={['wrapper_main', s.sale].join(' ')}>
         <div className={s.sale_text}>
             <h3>Sale</h3>
-            <h4>the new season</h4>
-            <div className={s.button}>
-                <button className={s.promotions}>All promotions</button>
-                {/* <button className={s.more}>More information</button> */}
-            </div>
+            <p className={s.text_new_season}>the new season</p>
+            {/* <div className={s.button}> */}
+                <button className={s.promotions}>All promotions</button>    
+            {/* </div> */}
         </div>
         <img src={img_sale} alt="img_sale" />
     </div>

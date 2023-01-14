@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { decrement_count_action, increment_count_action } from '../../store/reducer/basketReducer';
 import s from './style.module.sass';
 
@@ -8,11 +9,16 @@ export default function BasketCard({ id, image, title, price, discont_price, cou
 
 const dispatch = useDispatch();
 
+const link = `/products/${id}`
   return (
     <div className={s.card}>
-      <img src={image} alt="image_product" />
+      <Link to={link}>
+        <img src={image} alt="image_product" />
+      </Link>
       <div className={s.info_count}>
-        <p>{title}</p>
+        <Link to={link}>
+         <p>{title}</p>
+        </Link>
         <div className={s.button_container}>
           <button onClick={() => dispatch(decrement_count_action(id))}>-</button>
           <p>{count}</p>

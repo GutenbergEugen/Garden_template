@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
-import DiscountSection from '../../components/DiscountSection'
-import SeasonSaleSection from '../../components/SeasonSaleSection'
-import StockSection from '../../components/StockSection'
-import s from './style.module.sass'
+import DiscountSection from '../../components/DiscountSection';
+import SeasonSaleSection from '../../components/SeasonSaleSection';
+import StockSection from '../../components/StockSection';
+import s from './style.module.sass';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadCategories } from '../../store/asyncActions/categories';
 import CategorieCard from '../../components/CategorieCard';

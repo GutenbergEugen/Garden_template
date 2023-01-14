@@ -7,6 +7,8 @@ import NotFound from '../../pages/NotFound';
 import ProductDescription from '../../pages/ProductDescription';
 import ProductsContainer from '../ProductsContainer';
 import Lyaout from '../Layout';
+import StocksPage from '../../pages/StocksPage';
+import ContactsPage from '../../pages/ContactsPage';
 
 
 
@@ -21,6 +23,8 @@ function App() {
           <Route path="/categories/:categorie_id" element={<ProductsContainer />}/>
           <Route path="/products/:product_id" element={<ProductDescription />}/>
           <Route path="/basket" element={<BasketPage />}/>
+          <Route path="/stock" element={<StocksPage />}/>
+          <Route path="/contacts" element={<ContactsPage/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Route>
       </Routes>

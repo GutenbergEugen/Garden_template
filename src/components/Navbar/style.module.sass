@@ -1,6 +1,14 @@
-.wrapper
+.menu_block
     display: flex
     align-items: center
+    position: fixed
+    width: 100%
+    top: 0
+    left: 0
+    z-index: 50
+    background-color: white
+    padding:  26px
+    
 
     .menu_catalog
         margin: 0 auto
@@ -23,8 +31,13 @@
         list-style: none
         font-size: 20px
 
-    .menu li:hover 
-        color: #339933
+        a
+            text-decoration: none
+            color: black
+
+        a:hover
+            color: #339933
+
     
     .catalog
         background-color: #339933
@@ -34,8 +47,8 @@
         border-radius: 10px
 
     .categories
-        text-decoration: none
-        color: black
+        // text-decoration: none
+        // color: black
 
     .categories:hover
         color: #339933
