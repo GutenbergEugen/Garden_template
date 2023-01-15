@@ -4,7 +4,7 @@ import s from './style.module.sass';
 
 export default function SeasonSaleSection() {
   return (
-    <div className={['wrapper_main', s.sale].join(' ')}>
+    <div className={s.sale}>
         <div className={s.sale_text}>
             <h3>Sale</h3>
             <p className={s.text_new_season}>the new season</p>
