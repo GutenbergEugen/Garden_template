@@ -21,7 +21,7 @@
     font-size: 60px
 
 .inputs
-    width: 473px
+    width: 2fr
     display: flex
     flex-direction: column
     gap: 25px
@@ -48,3 +48,19 @@
     font-weight: 600
     font-size: 18px
     line-height: 120%
+
+@media (max-width: 1000px)
+    .discount img
+        margin-left: 0px
+    .discount_sum
+        font-size: 50px
+    .discount_orders   
+        font-size: 40px
+
+@media (max-width: 800px)
+    .discount img
+        display: none
+    .discount_sum
+        font-size: 40px
+    .discount_orders   
+        font-size: 30px

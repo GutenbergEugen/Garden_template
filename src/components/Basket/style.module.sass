@@ -48,6 +48,7 @@
 .order_details
     display: flex
     flex-direction: column
+    justify-content: space-between
     height: 400px
     padding: 25px
     border: 2px solid black
@@ -65,7 +66,6 @@
         height: 73px
         border: 2px solid transparent
         border-radius: 20px
-        padding: 25px
         background-color: #339933
         color: white
         font-size: 18px
@@ -91,3 +91,36 @@
 .basket_empty
     font-size: 30px 
     
+@media (max-width: 1000px) 
+    .basket_container 
+        display: flex
+        flex-direction: column
+    .container_nav
+        width: 100%
+   
+@media (max-width: 600px) 
+    .order_details
+        width: 250px
+        height: 300px
+        margin: 0 auto
+        
+        input
+            height: 40px
+        
+        .button_buy
+            height: 40px
+            margin-top: 10px
+        .summ
+            margin: 10px 0
+            
+@media (max-width: 400px) 
+    .order_details
+        width: 250px
+        margin: 0 auto
+        
+        
+        .button_buy
+            
+
+        .summ
+            margin: 10px 0
