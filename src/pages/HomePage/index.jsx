@@ -28,7 +28,7 @@ const new_arr = categories.filter(function(el, index) {
     <>
         <SeasonSaleSection />
         <div className='wrapper'>
-          <div className={s.contaeiner_title}>
+          <div className={s.categories_block}>
             <p>Categories</p>
             <Link to='/categories' className={s.categories_btn}>All categories</Link>
           </div>

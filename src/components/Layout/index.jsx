@@ -1,14 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import Footer from '../Footer';
-import Navbar from '../Navbar';
+import Header from '../Header';
 import s from './style.module.sass';
 
 export default function Lyaout() {
   return (
-    <div className={s.wrapper}>
-        <Navbar />
-         <div className={s.content}>
+    <div className={s.wrapper_layout}>
+        <Header />
+         <div className={s.content_layout}>
             <Outlet />
         </div>
         <Footer />

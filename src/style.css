@@ -11,10 +11,17 @@
 
 .wrapper_main{
   max-width: 1280px;
-  margin: 150px 26px 0 26px ;
+  margin: 170px 26px 0 26px ;
 }
 
 .wrapper{
   margin: 0 26px;
   max-width: 1280px;
+}
+
+.wrapper_title_page {
+  font-weight: 700;
+  font-size: 40px ;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }

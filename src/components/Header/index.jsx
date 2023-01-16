@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { MenuOutlined } from '@ant-design/icons';
 
-export default function Navbar() {
+export default function Header() {
 
     const basket = useSelector(state => state.basket)  
     const count = basket.reduce((pre, {count}) => pre + count, 0)
@@ -15,8 +15,8 @@ export default function Navbar() {
 
   return (
     <nav>
-        <div className={['wrapper', s.menu_block].join(' ')}>
-            <Link to='/'>
+        <div className={['wrapper', s.header_block].join(' ')}>
+            <Link className={s.header_logo} to='/'>
                 <img src={logo} alt="logo" />
             </Link>
             {/* <a href='/'><img src={logo} alt="logo" /></a> */}

@@ -5,7 +5,7 @@ import s from './style.module.sass';
 export default function StocksPage() {
   return (
     <div className={"wrapper_main"}>
-        <p className={s.title}>Stocks</p>
+        <p className={['wrapper_title_page', s.title].join(' ')}>Stocks</p>
         <StockContainer />
 
     </div>

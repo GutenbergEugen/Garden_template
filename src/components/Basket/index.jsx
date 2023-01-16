@@ -12,17 +12,17 @@ console.log('basket:', basket)
 
   return (
     <div className={['wrapper_main', s.basket].join(' ')}>
-        <p className={ s.title}>Basket</p>
-                <div className={ s.container_nav}>
-                    <div className={s.on_left}>
-                        <Link to='/'>Main</Link>
-                        <p>/</p>
-                        <Link to='/basket'>Basket</Link>
-                    </div>
-                    <div className={s.on_right}>
-                        <Link to='/categories'>Сontinue shopping</Link>
-                    </div>  
+        <p className={['wrapper_title_page', s.title].join(' ')}>Basket</p>
+            <div className={ s.container_nav}>
+                <div className={s.main_basket}>
+                    <Link to='/'>Main</Link>
+                    <p>/</p>
+                    <Link to='/basket'>Basket</Link>
                 </div>
+                <div className={s.shopping}>
+                    <Link to='/categories'>Сontinue shopping</Link>
+                </div>  
+            </div>
                 
                 {
                     basket.length === 0
