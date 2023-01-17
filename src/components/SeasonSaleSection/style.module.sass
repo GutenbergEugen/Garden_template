@@ -7,7 +7,7 @@
     
     
 
-.sale_text
+.block_text
     margin: 250px 0px 130px 50px 
     font-weight: 700
     font-size: 80px
@@ -21,6 +21,9 @@
     align-items: flex-end
     line-height: 70%
 
+.button_promotion
+  text-decoration: none
+
 .promotions
     width: 240px
     height: 80px
@@ -30,8 +33,14 @@
     font-weight: 700
     font-size: 25px
     line-height: 130%
-    cursor: pointers
     margin-top: 70px
+    cursor: pointer
+    display: block
+    transition: all 500ms ease
+
+.promotions:hover
+    transform: scale(1.1)
+    
     
     img
         object-fit: cover

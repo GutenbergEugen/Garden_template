@@ -9,6 +9,7 @@ import ProductsContainer from '../ProductsContainer';
 import Lyaout from '../Layout';
 import StocksPage from '../../pages/StocksPage';
 import ContactsPage from '../../pages/ContactsPage';
+import DiscountMessagePage from '../../pages/DiscountMessagePage';
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/basket" element={<BasketPage />}/>
           <Route path="/stock" element={<StocksPage />}/>
           <Route path="/contacts" element={<ContactsPage/>}/>
+          <Route path="/discount_message" element={<DiscountMessagePage/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Route>
       </Routes>
