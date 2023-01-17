@@ -7,6 +7,7 @@ export const ADD_TO_BASKET = 'ADD_TO_BASKET';
 export const INCR_COUNT = 'INCR_COUNT';
 export const DECR_COUNT = 'DECR_COUNT';
 export const CLEAR_BASKET = 'CLEAR_BASKET';
+export const DELETE_BASKET = 'DELETE_BASKET';
 
 // export const add_to_basket_action = ( id, title, price, discont_price ) => {
 //     return{
@@ -31,6 +32,11 @@ export const increment_count_action = id => ({
 
 export const decrement_count_action = id => ({
     type: DECR_COUNT,
+    payload: id
+})
+
+export const delete_action = id => ({
+    type: DELETE_BASKET,
     payload: id
 })
 
@@ -65,6 +71,10 @@ export const basketReducer = (state = default_state, action) => {
     }else if (action.type === CLEAR_BASKET){
         write_local([]);
         return [];
+    }else if(action.type === DELETE_BASKET){
+        state = state.filter(({id}) => id !== action.payload);
+        write_local(state);
+        return [...state]
     }else {
         return state
     }

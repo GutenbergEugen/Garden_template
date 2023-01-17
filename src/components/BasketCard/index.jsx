@@ -1,7 +1,8 @@
+import { CloseOutlined } from '@ant-design/icons';
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { decrement_count_action, increment_count_action } from '../../store/reducer/basketReducer';
+import { decrement_count_action, delete_action, increment_count_action } from '../../store/reducer/basketReducer';
 import s from './style.module.sass';
 
 
@@ -35,7 +36,11 @@ const link = `/products/${id}`
             <p style={{color: 'gray', textDecoration: 'line-through'}} className={s.price}>{(price*count).toFixed(2)}</p>
           </>
         }
-      </div>  
+      </div>
+      <div className={s.icon_close}>
+        <CloseOutlined onClick={() => dispatch(delete_action(id))}/> 
+      </div>
+      
     </div>
   )
 }

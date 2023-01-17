@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './media/logo.png';
 import s from './style.module.sass';
 import { ShoppingOutlined } from '@ant-design/icons'; 
@@ -10,8 +10,8 @@ export default function Header() {
 
     const basket = useSelector(state => state.basket)  
     const count = basket.reduce((pre, {count}) => pre + count, 0)
-    console.log(count)
-
+    
+    const [ menuActive, setMenuActive ] = useState(false);
 
   return (
     <nav>
@@ -23,8 +23,8 @@ export default function Header() {
             <div className={s.menu_catalog}>
                 <NavLink to='/categories' className={s.catalog}>Catalog</NavLink>
                 
-                <div className={s.menu_basket}>
-                    <ul className={s.menu}>
+                <div className={s.menu_block}>
+                    <ul className={[s.menu, menuActive ? s.active : ''].join(' ') }>
                         <NavLink to='/categories' className={s.categories} >Categories</NavLink>
                         {/* <li>Coupon</li> */}
                         <NavLink to="/stock">Stocks</NavLink>
@@ -36,8 +36,9 @@ export default function Header() {
                     </div>
                 </div>   
             </div>
-            <MenuOutlined className={s.burger_menu}/>
+            <MenuOutlined className={s.burger_icon} onClick={() => setMenuActive(menuActive ? false : true)}/>
         </div>
+        
     </nav>
   )
 }

@@ -5,22 +5,33 @@ import { useEffect } from 'react';
 import { loadProducts } from '../../store/asyncActions/products';
 import ProductCard from '../../components/ProductCard';
 import s from './style.module.sass'
+import { loadCategories } from '../../store/asyncActions/categories';
 
 
 export default function ProductsContainer() {
 
 const products = useSelector(state => state.products);
+
+
 const [priceParams, setPriceParams] = useState({min: -Infinity, max: Infinity});
 const [filtered_products, setFiltered_products] = useState(products);
 
-const dispatch = useDispatch();
 
+//add category name:
+const categories = useSelector(state => state.categorie);
+const dispatch = useDispatch();
 const {categorie_id} = useParams();
-// console.log('ProductsPage:', categorie_id);
 
 useEffect(() => {
-    dispatch(loadProducts(categorie_id));
+  dispatch(loadCategories());
 }, []);
+const current_category = categories.find(el => el.id === +categorie_id) 
+
+useEffect(() => {
+  dispatch(loadProducts(categorie_id));
+}, []);
+
+console.log('ProductsPageFilter 2:', products);
 
 const priceSearch = () => {
   setFiltered_products(pre => pre.map(product => {
@@ -42,11 +53,7 @@ const minInput = event => {
   setPriceParams(pre => ({...pre, min: +event.target.value  || -Infinity}));
 };
 
-// useEffect(()=> {
-//   setFiltered_products(products)
-// }, [products])
 
-console.log('ProductsPageFilter:', filtered_products);
 
 
 // console.log('Search', product_FILTER) 
@@ -68,8 +75,17 @@ const sortOnChange = event => {
   sort(value);
 }
 
+useEffect(()=> {
+  priceSearch()
+}, [products])
+
+console.log('ProductsPageFilter:', filtered_products);
+
   return (
     <section className={['wrapper_main', s.products_block].join(' ')}>
+      <div className={['wrapper_title_page', s.title].join(' ')}>
+        <p>{current_category?.title}</p>
+      </div>
       <form className={ s.search_form}>
         <div className={s.search_price}>
           <p>Price</p>
