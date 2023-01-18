@@ -4,7 +4,7 @@ import Footer from '../Footer';
 import Header from '../Header';
 import s from './style.module.sass';
 
-export default function Lyaout() {
+export default function Layout() {
   return (
     <div className={s.wrapper_layout}>
         <Header />

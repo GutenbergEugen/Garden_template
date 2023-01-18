@@ -11,7 +11,7 @@ export default function ProductCard({id, title, price, discont_price, image }) {
     const discount =  (1 - +discont_price / +price) * 100
 
 
-    console.log('ProductPageFilter:', title)
+    // console.log('ProductPageFilter:', title)
     
 
     const dispatch = useDispatch();

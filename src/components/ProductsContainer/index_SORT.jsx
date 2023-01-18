@@ -37,6 +37,8 @@ export default function Test() {
     setpriceParams(pre => ({...pre, min: +event.target.value  || -Infinity}));
   }
 
+  // console.log('ProductsPageFilter 3:', products);
+
   return (
     <div>
       <form>

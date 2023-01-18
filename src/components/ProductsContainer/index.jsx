@@ -12,7 +12,6 @@ export default function ProductsContainer() {
 
 const products = useSelector(state => state.products);
 
-
 const [priceParams, setPriceParams] = useState({min: -Infinity, max: Infinity});
 const [filtered_products, setFiltered_products] = useState(products);
 
@@ -27,9 +26,7 @@ useEffect(() => {
 }, []);
 const current_category = categories.find(el => el.id === +categorie_id) 
 
-useEffect(() => {
-  dispatch(loadProducts(categorie_id));
-}, []);
+
 
 console.log('ProductsPageFilter 2:', products);
 
@@ -45,6 +42,11 @@ useEffect(()=>{
   priceSearch();
 }, [priceParams]);
 
+useEffect(() => {
+  dispatch(loadProducts(categorie_id));
+  setFiltered_products(products)
+}, []);
+
 const maxInput = event => {
   setPriceParams(pre => ({...pre, max: +event.target.value || Infinity}));
 };
@@ -53,10 +55,6 @@ const minInput = event => {
   setPriceParams(pre => ({...pre, min: +event.target.value  || -Infinity}));
 };
 
-
-
-
-// console.log('Search', product_FILTER) 
 
 const sort = (sort_value) => {
   setFiltered_products(prev => {
@@ -73,11 +71,7 @@ const sort = (sort_value) => {
 const sortOnChange = event => {
   const value = event.target.value;
   sort(value);
-}
-
-useEffect(()=> {
-  priceSearch()
-}, [products])
+};
 
 console.log('ProductsPageFilter:', filtered_products);
 
@@ -112,6 +106,7 @@ console.log('ProductsPageFilter:', filtered_products);
             filtered_products
               .filter(({show_flg}) => show_flg)
               .map(product => <ProductCard key={product.id} {...product}/>)
+              // products.map(product => product.show_flg ? <ProductCard key={product.id} {...product}/> : "")
           }
          
       </div>
