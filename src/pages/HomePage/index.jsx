@@ -6,7 +6,6 @@ import StockSection from '../../components/StockSection';
 import CategoriesSection from '../../components/CategoriesSection';
 
 export default function HomePage() {
-
   return (
     <>
         <SeasonSaleSection />

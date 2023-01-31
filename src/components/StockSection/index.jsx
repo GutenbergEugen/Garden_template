@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProductsAll } from '../../store/asyncActions/productsAll';
@@ -14,10 +14,6 @@ const dispatch = useDispatch();
 useEffect(() => {
   dispatch(loadProductsAll())
 }, [])
-
-
-// console.log("StockSection", products_random)
-
 
   return (
     <div className={'wrapper'}>

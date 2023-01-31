@@ -1,34 +1,23 @@
 import React from 'react';
-import { useParams } from 'react-router';
-import { useSelector, useDispatch } from 'react-redux';
+import  { useSelector, useDispatch }from 'react-redux';
 import { useEffect } from 'react';
-import { load_products } from '../../store/asyncActions/products';
-import ProductCard from '../../components/ProductCard';
+import ProductCard from '../ProductCard';
 import s from './style.module.sass';
-import { loadCategories } from '../../store/asyncActions/categories';
-import { searchPrice, sortProducts } from '../../store/reducer/productReducer';
+import { loadProductsAll } from '../../store/asyncActions/productsAll';
+import { searchPrice_all_action, sortProducts_all_action } from '../../store/reducer/productReducerAll';
 
 
-export default function ProductsContainer() {
+export default function ProductsContainerAll() {
 
-const products = useSelector(state => state.products);
-
-//add category name:
-const categories = useSelector(state => state.categorie);
+const products = useSelector(state => state.products_all);
 const dispatch = useDispatch();
-const {categorie_id} = useParams();
-
-useEffect(() => {
-  dispatch(loadCategories());
-}, []);
-const current_category = categories.find(el => el.id === +categorie_id);
 
 useEffect(()=> {
-  dispatch(load_products(categorie_id))
+  dispatch(loadProductsAll())
 }, [])
 
 const sort_products = (event) => {
-  dispatch(sortProducts(event.target.value))
+  dispatch(sortProducts_all_action(event.target.value))
 };
 
 const search = event => {
@@ -36,15 +25,12 @@ const search = event => {
   const { min, max } = event.target;
   const min_value = min.value || 0;
   const max_value = max.value || Infinity;
-  dispatch(searchPrice({min_value, max_value}))
+  dispatch(searchPrice_all_action({min_value, max_value}))
 };
 
   return (
     <section className={['wrapper_main', s.products_block].join(' ')}>
-      <div className={['wrapper_title_page', s.title].join(' ')}>
-        <p>{current_category?.title}</p>
-      </div>
-
+      
       <form className={ s.search_form}  onSubmit={search}>
         <div className={s.search_price}>
           <p>Price</p>
@@ -53,7 +39,6 @@ const search = event => {
           <button>Search</button>
         </div>
      
-        
         <div className={s.sort}>
           <span>Sort by:</span>
             <select onInput={sort_products}>

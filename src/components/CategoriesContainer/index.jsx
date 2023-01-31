@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function CategoriesContainer() {
 
   const categories = useSelector(state => state.categorie);
-  // console.log('CONTAINER:', categories);
   const dispatch = useDispatch();
 
 useEffect(() => {

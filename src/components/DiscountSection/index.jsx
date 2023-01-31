@@ -17,7 +17,6 @@ export default function DiscountSection() {
               </Link>
             </div>
         </form>
-
     </div>
   )
 }

@@ -1,19 +1,19 @@
-import { load_products_action } from "../reducer/productReducer";
+import { loadProducts } from "../reducer/productReducer";
 
-
-
-
-export const loadProducts = (id) => {
-    return async dispatch => {
-        const response = await fetch(`http://localhost:3333/categories/${id}`);
-        const data = await response.json()
-        console.log('asyncAction:', data);
-        const payload = data
-
-        console.log('productAction:', payload)
-
-        dispatch(load_products_action(payload));
-    }
+export const load_products = (id) => {
+    return dispatch => {
+        fetch(`http://localhost:3333/categories/${id}`)
+        .then(resp => resp.json())
+        .then(json => {
+            const payload = json.map(el => ({
+                ...el,
+                hide: false
+            }))
+            dispatch(loadProducts(payload))
+        })
+    } 
 }
+
+;
 
 // ### /products/all   - ссылка на все продукты

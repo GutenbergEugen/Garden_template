@@ -8,7 +8,6 @@ export default function Basket() {
 
 const basket = useSelector(state => state.basket)
 console.log('basket:', basket)
-// const dispatch = useDispatch();
 
   return (
     <div className={['wrapper_main', s.basket].join(' ')}>

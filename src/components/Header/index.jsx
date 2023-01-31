@@ -9,8 +9,7 @@ import { MenuOutlined } from '@ant-design/icons';
 export default function Header() {
 
     const basket = useSelector(state => state.basket)  
-    const count = basket.reduce((pre, {count}) => pre + count, 0)
-    
+    const count = basket.reduce((pre, {count}) => pre + count, 0)  
     const [ menuActive, setMenuActive ] = useState(false);
 
   return (
@@ -19,14 +18,12 @@ export default function Header() {
             <Link className={s.header_logo} to='/'>
                 <img src={logo} alt="logo" />
             </Link>
-            {/* <a href='/'><img src={logo} alt="logo" /></a> */}
             <div className={s.menu_catalog}>
-                <NavLink to='/categories' className={s.catalog}>Catalog</NavLink>
+                <NavLink to='/catalog' className={s.catalog}>Catalog</NavLink>
                 
                 <nav className={s.menu_block}>
                     <ul className={[s.menu, menuActive ? s.active : ''].join(' ') }>
                         <NavLink to='/categories' className={s.categories} >Categories</NavLink>
-                        {/* <li>Coupon</li> */}
                         <NavLink to="/stock">Stocks</NavLink>
                         <NavLink to="/contacts">Contacts</NavLink>   
                     </ul>
