@@ -23,7 +23,7 @@ export default function Header() {
             <div className={s.menu_catalog}>
                 <NavLink to='/categories' className={s.catalog}>Catalog</NavLink>
                 
-                <div className={s.menu_block}>
+                <nav className={s.menu_block}>
                     <ul className={[s.menu, menuActive ? s.active : ''].join(' ') }>
                         <NavLink to='/categories' className={s.categories} >Categories</NavLink>
                         {/* <li>Coupon</li> */}
@@ -34,7 +34,7 @@ export default function Header() {
                         <NavLink to='/basket' className={s.icon}><ShoppingOutlined/></NavLink>  
                         {!!count && <span className={s.count}>{count}</span>}
                     </div>
-                </div>   
+                </nav>   
             </div>
             <MenuOutlined className={s.burger_icon} onClick={() => setMenuActive(menuActive ? false : true)}/>
         </div>
