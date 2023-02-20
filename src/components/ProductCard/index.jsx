@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import s from './style.module.sass';
 import { useDispatch } from 'react-redux';
 import { add_to_basket_action } from '../../store/reducer/basketReducer';
+import { motion } from 'framer-motion';
 
 
-export default function ProductCard({id, title, price, discont_price, image }) {
+
+export const ProductCard = forwardRef(({id, title, price, discont_price, image }, ref) => {
 
     const link = `/products/${id}`
     const discount =  (1 - +discont_price / +price) * 100
     const dispatch = useDispatch();
 
   return (
-    <div className={s.card}>
+    <div className={s.card} ref={ref}>
       <Link to={link} >
         <img src={image} alt="image_product" />
         
@@ -34,4 +36,6 @@ export default function ProductCard({id, title, price, discont_price, image }) {
     
     
   )
-}
+})
+
+export const MProductCard = motion(ProductCard)

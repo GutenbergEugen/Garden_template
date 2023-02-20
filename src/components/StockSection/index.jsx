@@ -2,8 +2,9 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProductsAll } from '../../store/asyncActions/productsAll';
-import ProductCard from '../ProductCard';
+import { MProductCard } from '../ProductCard';
 import s from './style.module.sass'
+import { motion } from 'framer-motion';
 
 export default function StockSection() {
 
@@ -15,14 +16,37 @@ useEffect(() => {
   dispatch(loadProductsAll())
 }, [])
 
+const productAnimation = {
+  hidden: {
+      y: 500,
+      opasity: 0,
+  },
+  visible: custom => ({
+      y: 0,
+      opasity: 1,
+      transition: {delay: custom * 0.2, duration: 0.5},
+  }),
+};
+
   return (
-    <div className={'wrapper'}>
+    <motion.div 
+      initial="hidden"
+      whileInView="visible" 
+      viewport={{ amount: 0.3 }}
+      style={{overflow: 'hidden'}}
+      className={'wrapper'}>
       <p className={s.title}>Stock</p>
       <div className={s.images_products}>
         {
-          products_random.map(product => <ProductCard key={product.id} {...product}/>)
+          products_random.map((product, index) => (
+            <MProductCard
+              custom = {index + 1} 
+              variants = {productAnimation}
+              key={product.id} 
+              {...product}
+            />))
         }
       </div>
-    </div>
+    </motion.div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import  { useSelector, useDispatch }from 'react-redux';
 import { useEffect } from 'react';
-import ProductCard from '../ProductCard';
+import { ProductCard } from '../ProductCard';
 import s from './style.module.sass';
 import { loadProductsAll } from '../../store/asyncActions/productsAll';
 import { searchPrice_all_action, sortProducts_all_action } from '../../store/reducer/productReducerAll';

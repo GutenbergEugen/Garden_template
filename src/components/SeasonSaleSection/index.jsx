@@ -24,6 +24,7 @@ export default function SeasonSaleSection() {
       initial="hidden"
       whileInView="visible" 
       viewport={{ amount: 0.5, once: true }}
+      style={{overflow: 'hidden'}}
       className={s.sale}>
         <div className={s.block_text}>
             <motion.h3 custom={1} variants={textAnimation}>Sale</motion.h3>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProductsDiscount } from '../../store/asyncActions/productsDiscountAll';
-import ProductCard from '../ProductCard';
+import { ProductCard } from '../ProductCard';
 import s from './style.module.sass'
 
 export default function StockContainer() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import CategorieCard from '../CategorieCard';
+import { CategorieCard } from '../CategorieCard';
 import s from './style.module.sass';
 import { loadCategories } from '../../store/asyncActions/categories'
 import { useDispatch, useSelector } from 'react-redux';

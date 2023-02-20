@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { load_products } from '../../store/asyncActions/products';
-import ProductCard from '../../components/ProductCard';
+import { ProductCard } from '../../components/ProductCard';
 import s from './style.module.sass';
 import { loadCategories } from '../../store/asyncActions/categories';
 import { searchPrice, sortProducts } from '../../store/reducer/productReducer';
