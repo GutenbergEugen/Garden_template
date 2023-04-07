@@ -9,7 +9,7 @@ export const reset_product_action = (payload) => ({type: RESET_PRODUCT, payload}
 
 export const singleProductReducer = (state = default_state, action) => {
     if (action.type === LOAD_PRODUCT){
-        console.log('singleProductReducer:', action.payload)
+        // console.log('singleProductReducer:', action.payload)
         return action.payload
     }else if (action.type === RESET_PRODUCT){
         return default_state

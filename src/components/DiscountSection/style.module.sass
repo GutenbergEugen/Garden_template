@@ -1,7 +1,6 @@
-.discount
+.discount_block
     padding: 27px 0
     display: flex
-    // justify-content: center
     background: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%)
 
 .discount img
@@ -11,8 +10,6 @@
     display: flex
     flex-direction: column
     margin: 0 auto
-    font-family: 'Montserrat'
-    font-style: normal
     color: white
 
 .discount_sum
@@ -24,27 +21,57 @@
     font-size: 60px
 
 .inputs
-    width: 473px
+    width: 2fr
     display: flex
     flex-direction: column
     gap: 25px
 
-    input
-        height: 75px
-        padding: 0 50px
-        background-color: white
-        border-radius: 25px
-        font-weight: 600
-        font-size: 18px
-        line-height: 120%
+.get_discount
+    height: 75px
+    display: flex
+    align-items: center
+    background-color: transparent
+    border: 2px solid white
+    border-radius: 25px
+    cursor: pointer
+    transition: all 500ms ease
+    text-decoration: none
+    color: white
+    font-weight: 600
+    font-size: 28px
+    line-height: 120% 
+     
+.btn_get_discount
+    margin: 0 auto
+      
 
-    button
-        height: 75px
-        align-items: center
-        background-color: transparent
-        border: 2px solid white
-        border-radius: 25px
-        color: white
-        font-weight: 600
-        font-size: 18px
-        line-height: 120%
+.get_discount:hover
+    transform: scale(1.1)
+    color: #339933
+    background-color: white
+
+.phone
+    border: none
+    height: 75px
+    padding: 0 50px
+    background-color: white
+    border-radius: 25px
+    font-weight: 600
+    font-size: 18px
+    line-height: 120%
+
+@media (max-width: 1000px)
+    .discount_block img
+        margin-left: 0px
+    .discount_sum
+        font-size: 50px
+    .discount_orders   
+        font-size: 40px
+
+@media (max-width: 800px)
+    .discount_block img
+        display: none
+    .discount_sum
+        font-size: 40px
+    .discount_orders   
+        font-size: 30px

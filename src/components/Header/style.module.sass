@@ -1,0 +1,118 @@
+.header_block
+    display: flex
+    align-items: center
+    position: fixed
+    width: 100%
+    top: 0
+    z-index: 50
+    background-color: white
+    padding:  26px
+    margin: 0
+    box-sizing: content-box
+    height: 100px
+    
+
+    .menu_catalog
+        margin: 0 auto
+        width: 91%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        cursor: pointer
+
+    .menu_block
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+    .menu
+        margin: 0 50px
+        display: grid
+        grid-template-columns: repeat(3, max-content)
+        gap: 50px
+        list-style: none
+        font-size: 20px
+
+        a
+            text-decoration: none
+            color: black
+
+        a:hover
+            color: #339933
+
+    
+    .catalog
+        background-color: #339933
+        text-decoration: none
+        color: white
+        padding: 14px 30px
+        border-radius: 10px
+        margin-left: 60px
+
+    .categories
+        // text-decoration: none
+        // color: black
+
+    .categories:hover
+        color: #339933
+
+  
+
+    .counter
+        position: relative
+        // font-size: 25px
+
+    .icon
+        display: block
+        font-size: 30px
+        text-decoration: none
+        color: black
+        margin-right:30px
+            
+
+    .count
+        position: absolute
+        display: flex
+        justify-content: center
+        align-items: center
+        left: -30%
+        top: -15%
+        width: 25px
+        height: 25px
+        background-color: #e4a22f
+        border-radius: 50%
+        color: white
+
+    .burger_icon
+        font-size: 40px
+        // transform: translateX(220px)
+        display: none
+
+.header_logo
+    max-width: 100%
+
+@media (max-width: 820px)
+    // .burger_icon 
+    //     display: flex
+    //     transform: translateX(-70px)
+    
+
+    .menu_block
+        position: relative
+    
+
+    .menu 
+        grid-template-columns: 1fr
+        position: absolute
+        right: 0
+        top: 100%
+        background-color: transporenz
+        transform: translateY(50%)
+        z-index: 20
+    
+
+    .menu.active 
+        transform: translateY(0)
+    
+
+    

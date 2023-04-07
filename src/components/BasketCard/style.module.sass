@@ -1,0 +1,82 @@
+.card
+    display: grid
+    grid-template-columns: 1fr 2fr 1fr 0.2fr
+    border-bottom: 2px solid #A7A7A7
+    position: relative
+    
+    img
+        height: 167px
+        object-fit: cover
+        margin: 20px 0
+
+.button_container
+    display: flex
+    justify-content: space-around
+    align-items: center
+    width: 100px
+    height: 40px
+    border: 1px solid #000000
+    border-radius: 12px
+
+    button
+        border: none
+        outline: none
+        background: none
+        width: 40px
+        font-size: 24px
+        cursor: pointer
+
+    p
+        font-size: 18px
+
+.info_count
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 20px 30px
+
+    a
+        text-decoration: none
+        color: black
+
+.block_price
+    display: flex
+    align-items: center
+
+.discont_price
+    font-weight: 600
+    font-size: 40px
+    padding: 0 40px 0 0
+
+.price
+    font-weight: 500
+    font-size: 20px
+    color: #8B8B8B
+
+.icon_close
+    background-color: #dcb278
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px solid transporenz
+    border-radius: 50%
+    width: 28px
+    height: 28px
+    font-size: 20px
+    cursor: pointer
+    color: white
+    position: absolute
+    right: 10px 
+    top: 10px
+
+@media (max-width: 600px)
+    .card
+        grid-template-columns: 1fr 1fr  
+    .discont_price
+        font-weight: 500
+        font-size: 30px
+
+
+
+    
+       

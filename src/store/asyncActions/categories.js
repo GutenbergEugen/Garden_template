@@ -5,11 +5,12 @@ export const loadCategories = () => {
     return async dispatch => {
         const response = await fetch('http://localhost:3333/categories/all');
         const data = await response.json()
-        const payload = data.map(({id, title})=>({
-            id, title,
-            categorie_img: "./media/fertilizer.png" 
+        const payload = data.map(({id, title, image})=>({
+            id, title, 
+            image
+            
         }));
-        console.log(data)
+        console.log('AsyncAction:', data)
         dispatch(load_categories_action(payload))
     }
 };

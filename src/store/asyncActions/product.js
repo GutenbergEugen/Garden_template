@@ -5,12 +5,13 @@ export const loadSingleProduct = (id) => {
         const response = await fetch(`http://localhost:3333/products/${id}`);
         const data = await response.json()
         console.log('asyncAction:', data);
-        const payload = data.map(({id, title, price, discont_price, description, categoryId })=>({
+        const payload = data.map(({id, title, price, discont_price, description, categoryId, image })=>({
             id, title, 
             price: +price, 
             discont_price: +discont_price, 
             description,
-            categoryId
+            categoryId,
+            image
         }));
 
         console.log('productAction:', payload)
